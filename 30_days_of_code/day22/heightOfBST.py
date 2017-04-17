@@ -19,12 +19,9 @@ class Solution:
                 root.right=cur
         return root
     def getHeight(self,root):
-        if root.left==None and root.right==None:
-            return 0
-        elif root.right==None and root.left!=None:
-           return 1 + self.getHeight(root.left)
-        else:
-           return 1 + self.getHeight(root.right)
+        if root == None:
+            return -1
+        return 1 + max(self.getHeight(root.left), self.getHeight(root.right))
 
 
 
